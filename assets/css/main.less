@@ -1,0 +1,280 @@
+@import "entypo";
+
+/*color definitions*/
+@color-charcoal: #2A2925;
+@color-midnight: #3B3B41;
+@color-smoke: #f5f5f5;
+@color-slate: #f7f7f3;
+@color-blue: #4f92a3;
+@color-red: #9f463a;
+@color-purple: #472344;
+@color-green: #94a12c;
+@color-green-bright: #afcd45;
+@color-orange: #bc8d4c;
+@color-marble: #EFEEE4;
+@color-dark: #2e3a41;
+
+@color-twitter: #4099FF;
+@color-facebook: #3B5998;
+@color-pinterest: #C92228;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,400italic);
+
+/*index.hbs*/
+
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: @color-slate;
+	font-family: 'Roboto', sans-serif;
+}
+
+@media all and (min-width: 769px) {
+	.site-head {
+		width: 100%;
+		height: 500px;
+		background-position: top center;
+		background-attachment: fixed;
+		background-repeat: repeat;
+		background-color: @color-dark;
+		-webkit-background-size: cover;
+  	    -moz-background-size: cover;
+  	    -o-background-size: cover;
+  	    background-size: cover;
+	}
+
+	.navbar {
+		width: 100%;
+		height: 80px;
+		background-color: #eeeee9;
+		transition: background-color 0.5s ease;
+	}
+
+	.navbar > .logo {
+		display: none;
+	}
+}
+
+@media all and (max-width: 768px) {
+	.site-head {
+		display: none;
+	}
+
+	.navbar {
+		position: fixed;
+		z-index: 99;
+		top: 0;
+		width: 100%;
+		height: 80px;
+		background-color: @color-dark;
+	}
+
+	.pages > a {
+		border-color: #6c808c !important;
+		color: #6c808c !important;
+	}
+
+	.social > a {
+		border-color: #6c808c !important;
+		color: #6c808c !important;
+	}
+}
+
+.navbar > .logo {
+	width: 60px;
+	height: 60px;
+	margin: 10px auto;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -30px;
+}
+
+.darkbar {
+	background: @color-dark !important;
+	transition: background-color 0.5s ease;
+}
+
+.darkbar-link {
+	border-color: #6c808c !important;
+	color: #6c808c !important;
+	transition: border-color 0.5s ease color 0.5s ease;
+}
+
+.site-head-content {
+	padding-top: 75px;
+	width: 100%;
+}
+
+.inner > h1 {
+	font-size: 40px;
+	font-weight: 100;
+	text-align: center;
+	color: @color-slate;
+	margin-bottom: 20px;
+}
+
+.inner > h2 {
+	margin: 0px auto;
+	font-weight: 100;
+	color: @color-slate;
+	font-size: 20px;
+	text-align: center;
+	width: 600px;
+}
+
+a.blog-logo > img {
+	margin: 0 auto;
+	display: block;
+	width: 150px;
+	height: 150px;
+}
+
+.pages {
+	height: 40px;
+	padding: 20px 40px;
+	float: left;
+}
+
+.pages > a {
+	height:40px;
+	float: right;
+	text-decoration: none;
+	color: #959492;
+	font-size: 16px;
+	text-align: center;
+	transition: color 0.5s ease, border-color 0.5s ease;
+	border: 1px solid #959492;
+	line-height: 44px;
+	padding: 0 10px;
+	margin-right: 10px;
+}
+
+.pages > a > .icon {
+	display: inline;
+}
+
+.pages > a > .text {
+	font-size: 14px;
+	font-weight: 400;
+	display: inline;
+	padding-left: 5px;
+	top: -2px;
+	position: relative;
+}
+
+.pages > a:hover {
+	color: @color-green-bright !important;
+	border-color: @color-green-bright !important;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.navbar > .logo > a > img {
+	width: 60px;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+}
+
+.social {
+	height: 40px;
+	padding: 20px 40px;
+	float: right;
+}
+
+.social > a {
+	width: 40px;
+	height:40px;
+	float: right;
+	text-decoration: none;
+	color: #959492;
+	font-size: 16px;
+	text-align: center;
+	transition: color 0.5s ease, border-color 0.5s ease;
+	border: 1px solid #959492;
+	line-height: 44px;
+	margin-left: 10px;
+}
+
+.social > a > .icon {
+	display: inline;
+}
+
+.social > a.rss:hover {
+	color: #ff6600 !important;
+	border-color: #ff6600 !important;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.social > a.pinterest:hover {
+	color: @color-pinterest !important;
+	border-color: @color-pinterest !important;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.social > a.twitter:hover {
+	color: @color-twitter !important;
+	border-color: @color-twitter !important;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.social > a.facebook:hover {
+	color: @color-facebook !important;
+	border-color: @color-facebook !important;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+main.content {
+	width: 960px;
+	margin: 40px auto;
+}
+
+main.content > article {
+	margin-top: 40px;
+	width: 100%;
+	height: 260px;
+	background-color: #f9f9f5;
+	border: 1px solid #e6e6e2;
+}
+
+/*
+Footer
+ */
+
+footer {
+	font-size: 14px;
+	font-weight: 100;
+	text-align: center;
+	height: 100px;
+	padding-top: 40px;
+	width: 100%;
+	background-position: bottom center;
+	background-attachment: fixed;
+	background-repeat: repeat;
+	background-color: @color-dark;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: @color-slate;
+}
+
+a {
+	color: @color-slate;
+	text-decoration: none;
+	transition: color 0.5s ease;
+}
+
+a:hover {
+	color: @color-green-bright;
+	transition: color 0.5s ease;
+}
