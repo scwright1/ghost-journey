@@ -41,14 +41,25 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
     <article class="{{post_class}}">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        <div class="post-cover gradient">
+            <div style='width: 110px; height: 40px; position: absolute; margin-top: -20px; margin-left: -55px; top: 50%; left: 50%;'>
+                <a href="{{url}}"><b>READ MORE</b></a>
+            </div>
+        </div>
 
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
-        </section>
+        <div class='post-text' {{#if @even}}style='float: right;'{{else}}style='float: left;'{{/if}}>
+            <header class="post-header">
+                <span class="post-meta"><div class='icon entypo calendar'></div><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="in "}}</span>
+                <div class="post-title"><a href="{{url}}">{{{title}}}</a></div>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt}}&hellip;</p>
+            </section>
+        </div>
+        <div class='post-image' {{#if @even}}style='float: right;'{{else}}style='float: left;'{{/if}}>
+            <div class='image' data-img='{{content words="0"}}'>
+            </div>
+        </div>
     </article>
 
     {{/foreach}}
