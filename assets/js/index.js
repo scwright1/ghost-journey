@@ -5,11 +5,13 @@
 /*globals jQuery, document */
 (function ($) {
     "use strict";
-    articleHover();
-    if($(window).width() > 768) {
-    	convertPostImages();
-        navbar();
-    }
+    $(document).ready(function() {
+	    articleHover();
+	    if($(window).width() > 768) {
+	    	convertPostImages();
+	        navbar();
+	    }
+    });
 }(jQuery));
 
 $(document).resize(function() {
