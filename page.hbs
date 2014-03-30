@@ -2,24 +2,47 @@
 
 {{! This is a page template. A page outputs content just like any other post, and has all the same
     attributes by default, but you can also customise it to behave differently if you prefer. }}
-
+<nav class='navbar darkbar'>
+    <div class='responsive-menu'>
+        <div class='icon entypo list'></div>
+    </div>
+    <div class='responsive-menu-list'>
+        <a class='page' href='http://www.intripd.com'>
+            <div class='icon entypo compass'></div><div class='text'>GO TO APP</div>
+        </a>
+        <a class='soc rss' href='{{@blog.url}}/rss/'>
+            <div class='icon entypo rss'></div>
+        </a>
+        <a class='soc pinterest' href='http://pinterest.com/intripd'>
+            <div class='icon entypo-social pinterest'></div>
+        </a>
+        <a class='soc twitter' href='https://twitter.com/intripd'>
+            <div class='icon entypo-social twitter'></div>
+        </a>
+        <a class='soc facebook' href='https://facebook.com/intripd'>
+            <div class='icon entypo-social facebook'></div>
+        </a>
+    </div>
+    <div class='pages'>
+        <a class='darkbar-link' href='http://www.intripd.com'><div class='icon entypo compass'></div><div class='text'>GO TO APP</div></a>
+    </div>
+    <div class='logo' style='display: inline'>
+        {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt='Blog Logo' /></a>{{/if}}
+    </div>
+    <div class='social'>
+        <a class='rss darkbar-link' href='{{@blog.url}}/rss/'><div class='icon entypo rss'></div></a>
+        <a class='pinterest darkbar-link' href='http://pinterest.com/intripd'><div class='icon entypo-social pinterest'></div></a>
+        <a class='twitter darkbar-link' href='https://twitter.com/intripd'><div class='icon entypo-social twitter'></div></a>
+        <a class='facebook darkbar-link' href='https://facebook.com/intripd'><div class='icon entypo-social facebook'></div></a>
+    </div>
+</nav>
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
-
-        <header class="post-header">
-            <a class="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
-                {{/if}}
-            </a>
-        </header>
+    <article class="single-post {{post_class}}">
 
         {{#post}}
 
-            <h1 class="post-title">{{{title}}}</h1>
+            <h1 class="single-page post-title">{{{title}}}</h1>
 
             <section class="post-content">
                 {{content}}

@@ -61,6 +61,14 @@ body {
 		transition: background-color 0.5s ease;
 	}
 
+	.navbar > .responsive-menu {
+		display: none;
+	}
+
+	.navbar > .responsive-menu-list {
+		display: none;
+	}
+
 	.navbar > .logo {
 		display: none;
 	}
@@ -85,8 +93,24 @@ body {
 		background-color: @color-dark;
 	}
 
+	.responsive-menu-list {
+		position: absolute;
+		top: 80px;
+		padding: 20px;
+		background: @color-dark;
+		left: -240px;
+	}
+
 	.navbar > .logo {
 		display: inline;
+	}
+
+	.pages {
+		display: none;
+	}
+
+	.social {
+		display: none;
 	}
 
 	.pages > a {
@@ -115,6 +139,67 @@ body {
 		text-align: center;
 	}
 
+	.post-excerpt {
+		font-size: 12px !important;
+	}
+
+}
+
+.responsive-menu-list > .page:hover {
+	color: @color-green-bright !important;
+	border-color: @color-green-bright !important;
+	transition: color 0.5s ease, border-color 0.5s ease;
+	}
+
+.responsive-menu-list > a {
+	height:40px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	color: #6c808c;
+	font-size: 16px;
+	text-align: center;
+	transition: color 0.5s ease, border-color 0.5s ease;
+	line-height: 44px;
+	padding: 10px 10px;
+	display: block;
+}
+
+.responsive-menu-list > a.soc {
+	display: inline;
+	margin-right: 10px;
+}
+
+.responsive-menu-list > a > .icon {
+	display: inline;
+}
+
+.responsive-menu-list > a > .text {
+	font-size: 14px;
+	font-weight: 400;
+	display: inline;
+	padding-left: 5px;
+	top: -2px;
+	position: relative;
+}
+
+.navbar > .responsive-menu {
+	width: 40px;
+	height: 40px;
+	margin: 20px;
+	border: 1px solid #6c808c;
+	color: #6c808c;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.navbar > .responsive-menu:hover {
+	border-color: @color-green-bright;
+	color: @color-green-bright;
+	transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.navbar > .responsive-menu > .icon {
+	font-size: 60px;
+	margin: 20px 6px;
 }
 
 .navbar > .logo {
@@ -240,25 +325,25 @@ a.blog-logo > img {
 	display: inline;
 }
 
-.social > a.rss:hover {
+.rss:hover {
 	color: #ff6600 !important;
 	border-color: #ff6600 !important;
 	transition: color 0.5s ease, border-color 0.5s ease;
 }
 
-.social > a.pinterest:hover {
+.pinterest:hover {
 	color: @color-pinterest !important;
 	border-color: @color-pinterest !important;
 	transition: color 0.5s ease, border-color 0.5s ease;
 }
 
-.social > a.twitter:hover {
+.twitter:hover {
 	color: @color-twitter !important;
 	border-color: @color-twitter !important;
 	transition: color 0.5s ease, border-color 0.5s ease;
 }
 
-.social > a.facebook:hover {
+.facebook:hover {
 	color: @color-facebook !important;
 	border-color: @color-facebook !important;
 	transition: color 0.5s ease, border-color 0.5s ease;
@@ -435,4 +520,85 @@ single post
 main.content > article.single-post {
 	margin-top: 120px;
 	height: auto;
+}
+
+main.content > article.single-post > .post-meta {
+	margin-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+main.content > article.single-post > .post-author {
+	padding-left: 40px;
+}
+
+.post-author > img {
+	border-radius: 8px;
+}
+
+.post-author-name {
+	display: inline;
+	top: -3px;
+	position: relative;
+	font-weight: 300;
+	margin-left: 4px;
+	font-size: 12px;
+}
+
+main.content > article.single-post > .post-title {
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 5px;
+	font-size: 30px;
+	color: @color-green-bright;
+	font-weight: 500;
+}
+
+main.content > article.single-post > .post-content {
+	padding: 40px;
+	font-weight: 300;
+}
+
+main.content > article.single-post > .post-content > h2 {
+	font-weight: 400;
+}
+
+main.content > article.single-post > .post-content > h3 {
+	font-weight: 400;
+}
+
+main.content > article.single-post > .post-content > pre {
+	background: #e7edf0;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid #b5c6ce;
+}
+
+main.content > article.single-post > .post-content > p > a {
+	color: #000;
+	font-weight: 400;
+	transition: color 0.5s ease;
+}
+
+main.content > article.single-post > .post-content > p > a:hover {
+	color: @color-green-bright;
+	transition: color 0.5s ease;
+}
+
+
+main.content > article.single-post > .post-content > p > img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#disqus_thread {
+	margin: 40px;
+}
+
+.single-post > h1.single-page {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 0px;
+	font-weight: 300 !important;
+	font-size: 40px !important;
 }

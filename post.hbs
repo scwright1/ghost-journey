@@ -3,6 +3,26 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 <nav class='navbar darkbar'>
+    <div class='responsive-menu'>
+        <div class='icon entypo list'></div>
+    </div>
+    <div class='responsive-menu-list'>
+        <a class='page' href='http://www.intripd.com'>
+            <div class='icon entypo compass'></div><div class='text'>GO TO APP</div>
+        </a>
+        <a class='soc rss' href='{{@blog.url}}/rss/'>
+            <div class='icon entypo rss'></div>
+        </a>
+        <a class='soc pinterest' href='http://pinterest.com/intripd'>
+            <div class='icon entypo-social pinterest'></div>
+        </a>
+        <a class='soc twitter' href='https://twitter.com/intripd'>
+            <div class='icon entypo-social twitter'></div>
+        </a>
+        <a class='soc facebook' href='https://facebook.com/intripd'>
+            <div class='icon entypo-social facebook'></div>
+        </a>
+    </div>
     <div class='pages'>
         <a class='darkbar-link' href='http://www.intripd.com'><div class='icon entypo compass'></div><div class='text'>GO TO APP</div></a>
     </div>
@@ -20,41 +40,31 @@
     <article class="single-post {{post_class}}">
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
-            <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
+            <div style='height: 40px;'></div>
+            <span class="post-meta"><div class='icon entypo calendar'></div><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
 
-            <h1 class="post-title">{{{title}}}</h1>
+            <div class="post-title">{{{title}}}</div>
+            <div class='post-author'><img src='{{author.image}}' width='16px' height='16px'/> <div class='post-author-name'>{{author.name}}</div></div>
 
             <section class="post-content">
                 {{content}}
             </section>
 
-            <footer class="post-footer">
-
-                <section class="author">
-                    <h4>{{author.name}}</h4>
-                    <p>{{author.bio}}</p>
-                </section>
-
-                <section class="share">
-                    <h4>Share this post</h4>
-                    <a class="icon-twitter" href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                        <span class="hidden">Twitter</span>
-                    </a>
-                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <span class="hidden">Facebook</span>
-                    </a>
-                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                        <span class="hidden">Google+</span>
-                    </a>
-                </section>
-
-            </footer>
-
         {{/post}}
-
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'intripddev'; // required: replace example with your forum shortname
+            var disqus_identifier = '{{post.id}}'; // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+         
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </article>
 
 </main>

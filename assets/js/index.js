@@ -11,6 +11,9 @@
 	    	convertPostImages();
 	        navbar();
 	    }
+	    if($(window).width() <= 768) {
+			responsiveNav();
+		}
     });
 }(jQuery));
 
@@ -19,7 +22,24 @@ $(document).resize(function() {
 	   	convertPostImages();
 	    navbar();
 	}
+	if($(window).width() <= 768) {
+		responsiveNav();
+	}
 });
+
+function responsiveNav() {
+	$('.responsive-menu').click(function() {
+		var width = $('.responsive-menu-list').width();
+		var left = 0 - (width + 40);
+		if($('.responsive-menu-list').hasClass('open')) {
+			$('.responsive-menu-list').removeClass('open');
+			$('.responsive-menu-list').animate({left: left+'px'}, 200);
+		} else {
+			$('.responsive-menu-list').addClass('open');
+			$('.responsive-menu-list').animate({left: '0px'}, 200);
+		}
+	});
+}
 
 function navbar() {
     $(window).scroll(function(e){ 
